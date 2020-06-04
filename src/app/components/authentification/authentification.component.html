@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form class="form-login" #authForm="ngForm" (ngSubmit)="login(authForm)">
+    <ul class="login-nav">
+      <li class="login-nav__item active">
+        <a href="#">Sign In</a>
+      </li>
+    </ul>
+    <label for="login-input-user" class="login__label">
+      Username
+    </label>
+    <input id="login-input-user" name="username" ngModel class="login__input" type="text" required />
+    <label for="login-input-password" class="login__label">
+      Password
+    </label>
+    <input id="login-input-password" name="password" ngModel class="login__input" type="password" required />
+    <input type="submit" value="Sign in" class="login__submit">
+  </form>
+</div>
+<button mat-raised-button color="primary" (click)="authentificationService.checklogin()">Check Login</button>
+<button mat-raised-button color="primary" (click)="authentificationService.logout()">Logout</button>
+<p>{{authentificationService.loggedin}}</p>

@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>Create Movie</mat-card-title>
+  <form #authForm="ngForm" (ngSubmit)="createmovie(authForm)">
+    <div class="row">
+      <mat-form-field class="col-12">
+        <mat-label>Name</mat-label>
+        <input matInput name="name" ngModel required />
+      </mat-form-field>
+      <mat-form-field class="col-12">
+        <mat-label>Description</mat-label>
+        <textarea matInput name="description" ngModel></textarea>
+      </mat-form-field>
+      <mat-form-field class="col-12">
+        <mat-label>Releasedate</mat-label>
+        <input matInput [matDatepicker]="picker" name="releasedate" ngModel (click)="picker.open()" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button color="primary">Create</button>
+  </form>
+</mat-card>

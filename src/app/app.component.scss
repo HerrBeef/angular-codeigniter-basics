@@ -1,0 +1,24 @@
+
+mat-sidenav {
+  width: 15%;
+  height: calc(100vh - 64px);
+}
+
+mat-list {
+  height: 100%;
+}
+
+mat-sidenav-content {
+  height: calc(100vh - 64px);
+  padding: 25px;
+}
+
+mat-list a {
+  color: black;
+  text-decoration: none;
+}
+
+mat-list a.active {
+  background-color: lightgrey;
+  text-decoration: none;
+}

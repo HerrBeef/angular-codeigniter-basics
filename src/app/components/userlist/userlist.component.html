@@ -1,0 +1,37 @@
+<mat-card  *ngIf="error === ''">
+  <mat-card-title>Users</mat-card-title>
+<div>
+  <mat-form-field>
+    <mat-label>Suche</mat-label>
+    <input matInput [(ngModel)]="query" (keyup)="filter()">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Datum</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="datequery" (click)="picker.open()" (change)="filter()" (dateChange)="filter()" (dateSelect)="filter()" (keyup)="filter()">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon *ngIf="datequery != ''" matDatepickerToggleIcon (click)="datequery = ''; filter()">close</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="filter()" color="primary">Filter</button>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">E-Mail</th>
+    <th scope="col">Username</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of filteredUsers">
+    <th scope="row">{{ user.id }}</th>
+    <td>{{ user.email }}</td>
+    <td>{{ user.username }}</td>
+  </tr>
+  </tbody>
+</table>
+</mat-card>
+<mat-card *ngIf="error !== ''">
+  <mat-card-title>{{error}}</mat-card-title>
+</mat-card>

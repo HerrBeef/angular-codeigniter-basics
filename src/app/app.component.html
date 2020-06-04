@@ -1,0 +1,15 @@
+<mat-toolbar>{{title}}</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-list role="list">
+        <a mat-list-item routerLink="/authentification" routerLinkActive="active">Authentification</a>
+        <a mat-list-item routerLink="/movies" routerLinkActive="active">Movies</a>
+        <a mat-list-item routerLink="/users" routerLinkActive="active">Users</a>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
