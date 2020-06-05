@@ -2,11 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { Movie } from "../../models/movie.model";
 import { DatePipe } from "@angular/common";
 import { MovieService } from "../../services/movie.service";
+import { fadeInAnimation } from 'src/app/animations/fadein.animation';
 
 @Component({
   selector: "app-movielist",
   templateUrl: "./movielist.component.html",
   styleUrls: ["./movielist.component.scss"],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class MovielistComponent implements OnInit {
   public filteredMovies: Movie[];

@@ -4,11 +4,14 @@ import { DatePipe } from "@angular/common";
 import { MovieService } from "../../services/movie.service";
 import { MAT_DATE_LOCALE } from "@angular/material/core";
 import { ToastrService } from 'ngx-toastr';
+import { fadeInAnimation } from 'src/app/animations/fadein.animation';
 
 @Component({
   selector: "app-createmovie",
   templateUrl: "./createmovie.component.html",
   styleUrls: ["./createmovie.component.scss"],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class CreateMovieComponent implements OnInit {
   private datepipe: DatePipe = new DatePipe("en");

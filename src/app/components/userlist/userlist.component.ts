@@ -2,11 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { User } from "../../models/user.model";
 import { DatePipe } from "@angular/common";
+import { fadeInAnimation } from 'src/app/animations/fadein.animation';
 
 @Component({
   selector: "app-userlist",
   templateUrl: "./userlist.component.html",
-  styleUrls: ["./userlist.component.scss"]
+  styleUrls: ["./userlist.component.scss"],
+  animations: [fadeInAnimation],
+  host: { '[@fadeInAnimation]': '' }
 })
 export class UserlistComponent implements OnInit {
   public filteredUsers: User[];
