@@ -21,6 +21,7 @@ import { CreateMovieComponent } from "./components/createmovie/create-movie.comp
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { ToastrModule } from 'ngx-toastr';
+import { MomentModule } from 'ngx-moment';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MomentModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'},
